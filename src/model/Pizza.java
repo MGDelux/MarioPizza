@@ -17,6 +17,7 @@ public class Pizza {
                 "PIZZANR=" + PIZZANR +
                 ", Pizza='" + Pizza + '\'' +
                 ", Pris=" + Pris ;
+
     }
     //*<--
 
