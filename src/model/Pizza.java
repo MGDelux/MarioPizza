@@ -14,10 +14,10 @@ public class Pizza {
     @Override
     public String toString() {
         return "Pizza{" +
-                "PIZZANR=" + PizzaNR +
+                "PizzaNR=" + PizzaNR +
                 ", Pizza='" + Pizza + '\'' +
-                ", Pris=" + Pris + " Kr." ;
-
+                ", Pris=" + Pris +
+                '}';
     }
     //*<--
 
