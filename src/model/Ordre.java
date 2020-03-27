@@ -4,7 +4,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Ordre {
-    int ordreUID;
+     static int ordreUID;
+
     LocalDateTime ordreTid;
     String kundeNavn;
     ArrayList<Pizza> pizza;
@@ -16,6 +17,7 @@ public class Ordre {
         this.kundeNavn = kundeNavn;
         this.pizza = pizza;
         this.ordreStatus = ordreStatus;
+
     }
 
     @Override
