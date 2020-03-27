@@ -16,7 +16,7 @@ public class Pizza {
         return "Pizza{" +
                 "PIZZANR=" + PizzaNR +
                 ", Pizza='" + Pizza + '\'' +
-                ", Pris=" + Pris ;
+                ", Pris=" + Pris + " Kr." ;
 
     }
     //*<--
