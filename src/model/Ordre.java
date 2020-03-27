@@ -4,22 +4,24 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Ordre {
-    int OrdreUID;
+    int ordreUID;
     LocalDateTime ordreTid;
     String kundeNavn;
     ArrayList<Pizza> pizza;
+    boolean ordreStatus;
 
-    public Ordre(int ordreUID, int ordreTid, String kundeNavn, ArrayList<Pizza> pizza) {
-        this.OrdreUID = ordreUID;
-        this.ordreTid = LocalDateTime.now();
+    public Ordre(int ordreUID, String kundeNavn, ArrayList<Pizza> pizza, boolean ordreStatus) {
+        this.ordreUID = ordreUID;
+        this.ordreTid = LocalDateTime.now(); //FORMAT
         this.kundeNavn = kundeNavn;
         this.pizza = pizza;
+        this.ordreStatus = ordreStatus;
     }
 
     @Override
     public String toString() {
         return "Ordre{" +
-                "OrdreUID=" + OrdreUID +
+                "OrdreUID=" + ordreUID +
                 ", ordreTid=" + ordreTid +
                 ", kundeNavn='" + kundeNavn + '\'' +
                 ", pizza=" + pizza;
