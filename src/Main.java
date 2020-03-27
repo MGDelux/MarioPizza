@@ -5,16 +5,16 @@ public class Main {
     public static void main(String[] args) {
         ShowMenu();
         PrintMenuKort();
-        try {
+        try { //Prøver at køre GetMenuKort(); Hvis filen ikke findes for vi fejl.
             GetMenuKort();
         } catch (FileNotFoundException e) {
-            System.out.println(e.toString());
+            System.out.println("Error: "+e.toString());
         }
     }
 
     private static void GetMenuKort() throws FileNotFoundException {
         MenuKort menuKort = new MenuKort();
-        menuKort.GetPizzas();
+        menuKort.GetPizzas(); //Printer Menu Kort
     }
 
     private static void PrintMenuKort() {
