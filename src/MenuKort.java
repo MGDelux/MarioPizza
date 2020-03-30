@@ -9,16 +9,16 @@ public class MenuKort {
     ArrayList<Pizza> tempPizzas = new ArrayList<Pizza>();
 
     public void GetPizzas() throws FileNotFoundException {
-        String filepath = "C:/Users/mathi/IdeaProjects/MarioPizza/src/Data/Pizzas.csv"; // PATH TIL cvs fil Data/Pizzas.cvs virker ikke på min pc ?
+        String filepath = "Data/Pizzas.csv";
         ImportData getPizzas = new ImportData();
         pizzas = new ArrayList<Pizza>();
         tempPizzas = getPizzas.ImportMenu(filepath);
-        AddPizzaToArry(tempPizzas);
+        AddPizzaToArray(tempPizzas);
         System.out.println(pizzas);
         new Main().ShowMenu();
     }
 
-    private void AddPizzaToArry(ArrayList<Pizza> temp) {
+    private void AddPizzaToArray(ArrayList<Pizza> temp) {
         for (Pizza piz: temp) {
             pizzas.add(piz);
         }

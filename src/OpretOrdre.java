@@ -47,20 +47,34 @@ public class OpretOrdre {
                 tempPizza = userInput.nextLine();
                 OpretOrdre(tempPizza);
                 break;
+            default:
+                System.out.println("Fejl i input");
+                break;
         }
 
     }
 
     private void OpretKunde() {
-        System.out.println("instast Kunde Navn:"); // FIX
+        System.out.println("indtast Kunde Navn:");
         tempKundeNavn = userInput.nextLine();
     }
 
+    private double getodrePris() {
+        double totalpris = 0;
+      for(Pizza pizza: tempPizza){
+        double pris =  pizza.getPris();
+        totalpris =+ totalpris + pris;
+      }
+        System.out.println("Total pris af ordre: "+totalpris+ " kr. \n");
+      return  totalpris;
+    }
 
     private void OpretOrdreID() {
-        Ordre nyPizza = new Ordre(ordreUID, tempKundeNavn, tempPizza, false);
+       double totalpris =  getodrePris();
+        Ordre nyPizza = new Ordre(ordreUID, tempKundeNavn, tempPizza, false,totalpris);
         ordrer.pizzaPark(nyPizza);
         System.out.println("Ordre oprettet: " + nyPizza);
+
     }
 
     private void OpretOrdre(String pizzaer) {

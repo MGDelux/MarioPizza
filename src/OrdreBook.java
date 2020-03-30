@@ -1,17 +1,17 @@
 import model.Ordre;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class OrdreBook {
     static ArrayList<Ordre> aktiveOrdrer = new ArrayList<Ordre>();
-    public void pizzaPark(Ordre ordre) {
-        aktiveOrdrer.add(ordre);
+
+    public void pizzaPark(Ordre ordre) { //#PIZZAPARK FTW
+        aktiveOrdrer.add(ordre); //tilføj ordre
     }
      void VisOrdre(){
          for (Ordre odre: aktiveOrdrer)
              if (odre.isOrdreStatus() == false){
-                 System.out.println("false : "+odre);
+                 System.out.println(odre);
              }
          new Main().ShowMenu();
     }
@@ -29,13 +29,22 @@ public class OrdreBook {
         }
 
     }
-    void aandreordre(int uID) {
+    void aandreordre(int uID) { //ændreOrdre
         for (Ordre ordre : aktiveOrdrer)
             if (uID == ordre.getOrdreUID()) {
                 ordre.setOrdreStatus(true);
                 new Main().ShowMenu();
 
             }
+    }
+    void BeregnOmsaatning(){
+        double totalPris = 0;
+        for (Ordre ordre : aktiveOrdrer){
+           double pris = ordre.getTotalOrderPris();
+           totalPris =+ totalPris + pris;
+        }
+        System.out.println("Omsætningen er: "+totalPris+" kr. ");
+        new Main().ShowMenu();
     }
 
 }

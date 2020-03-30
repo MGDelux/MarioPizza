@@ -14,12 +14,19 @@ public class Pizza {
 
     @Override
     public String toString() {
-        return "Pizza{" +
-                "PizzaNR=" + PizzaNR +
-                ", Pizza='" + Pizza + '\'' +
-                ", Pris=" + Pris +
-                '}';
+        return "Pizza(er): " +
+                "PizzaNR# " + PizzaNR +
+                ", Pizza Navn: '" + Pizza + '\'' +
+                ", Pris: " + Pris;
     }
-    //*<--
+    public String MenuToString() { //ALI's METODE
+        return "\nPizza(er): " +
+                "PizzaNR# " + PizzaNR +
+                ", Pizza Navn: '" + Pizza + '\'' +
+                ", Pris: " + Pris+"\n";
+    }
 
+    public double getPris() {return Pris;
+
+    }
 }
