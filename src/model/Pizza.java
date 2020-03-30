@@ -1,7 +1,8 @@
 package model;
+
 //@author: GRUPPE1*-->
 public class Pizza {
-     int PizzaNR;
+    int PizzaNR;
     String Pizza;
     double Pris;
 

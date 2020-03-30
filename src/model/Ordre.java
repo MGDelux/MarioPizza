@@ -1,11 +1,11 @@
 package model;
 //@author: GRUPPE1-->
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Ordre {
-     static int ordreUID;
-
+     int ordreUID;
     LocalDateTime ordreTid;
     String kundeNavn;
     ArrayList<Pizza> pizza;
@@ -23,10 +23,24 @@ public class Ordre {
     @Override
     public String toString() {
         return "Ordre{" +
-                "OrdreUID=" + ordreUID +
+                "ordreUID=" + ordreUID +
                 ", ordreTid=" + ordreTid +
                 ", kundeNavn='" + kundeNavn + '\'' +
-                ", pizza=" + pizza;
+                ", pizza=" + pizza +
+                ", ordreStatus=" + ordreStatus +
+                '}';
+    }
+
+    public boolean isOrdreStatus() {
+            return ordreStatus;
+    }
+
+    public  int getOrdreUID() {
+        return ordreUID;
+    }
+
+    public void setOrdreStatus(boolean ordreStatus) {
+        this.ordreStatus = ordreStatus;
     }
     //*<--
 }
