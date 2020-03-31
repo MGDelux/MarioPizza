@@ -19,13 +19,6 @@ public class Pizza {
                 ", Pizza Navn: '" + Pizza + '\'' +
                 ", Pris: " + Pris;
     }
-    public String MenuToString() { //ALI's METODE
-        return "\nPizza(er): " +
-                "PizzaNR# " + PizzaNR +
-                ", Pizza Navn: '" + Pizza + '\'' +
-                ", Pris: " + Pris+"\n";
-    }
-
     public double getPris() {return Pris;
 
     }

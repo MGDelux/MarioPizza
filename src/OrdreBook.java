@@ -5,10 +5,12 @@ import java.util.ArrayList;
 public class OrdreBook {
     static ArrayList<Ordre> aktiveOrdrer = new ArrayList<Ordre>();
 
-    public void pizzaPark(Ordre ordre) { //#PIZZAPARK FTW
+    public void tilFoejAktivOrdre(Ordre ordre) { //#PIZZAPARK FTW
         aktiveOrdrer.add(ordre); //tilføj ordre
     }
+
      void VisOrdre(){
+         System.out.println("Aktive Ordre: ");
          for (Ordre odre: aktiveOrdrer)
              if (odre.isOrdreStatus() == false){
                  System.out.println(odre);
@@ -16,8 +18,10 @@ public class OrdreBook {
          new Main().ShowMenu();
     }
     void VisAlleOrdre(){
+        System.out.println("Alle ordre:");
         for (Ordre odre: aktiveOrdrer)
                 System.out.println("Odre : "+odre);
+
         new Main().ShowMenu();
     }
     void SletOrdre(int uID){
@@ -36,6 +40,9 @@ public class OrdreBook {
                 new Main().ShowMenu();
 
             }
+        else {
+                System.out.println("Denne ordre kan ikke findes.");
+            }
     }
     void BeregnOmsaatning(){
         double totalPris = 0;
@@ -46,5 +53,8 @@ public class OrdreBook {
         System.out.println("Omsætningen er: "+totalPris+" kr. ");
         new Main().ShowMenu();
     }
+     public ArrayList<Ordre> faaAlleOrdre(){
+      return aktiveOrdrer;
+     }
 
 }

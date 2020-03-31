@@ -1,9 +1,12 @@
+import model.ExportData;
+
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Main {
     static Scanner input = new Scanner(System.in);
     OrdreBook aktiveOrdrer = new OrdreBook();
+    ExportData exportdata = new ExportData();
 
     public static void main(String[] args) {
         ImporterMenuKort();
@@ -16,23 +19,22 @@ public class Main {
             System.out.println("Error: " + e.toString());
         }
         new Main().ShowMenu(); // vis main menu
-
-
     }
 
     private static void GetMenuKort() throws FileNotFoundException {
         MenuKort menuKort = new MenuKort();
+        System.out.println("Menu Kort:");
         menuKort.GetPizzas(); //Printer Menu Kort
     }
 
     public void ShowMenu() {
-        String menu = "\nMario's Pizzaria \n Menu: \n Tryk: [1] For at Lave en ordre. \n Tryk: [2] For at vise en Liste over aktive Ordre. \n Tryk: [3] For at ændre en ordre. \n Tryk: [4] For at slette en ordre.\n Tryk: [5] For at vise alle ordrer. \n Tryk: [6] For at vise omsætning.\n Tryk: [7] for at lukke programmet.\n Tryk: [8] for at mute Ali.";
+        String menu = "\nMario's Pizzaria \n -Menu: \n Tryk: [1] For at Lave en ordre. \n Tryk: [2] For at vise en Liste over aktive Ordre. \n Tryk: [3] For at ændre en ordre. \n Tryk: [4] For at slette en ordre.\n Tryk: [5] For at vise alle ordrer. \n Tryk: [6] For at vise omsætning.\n Tryk: [7] for at gemme alle ordrer.";
         System.out.println(menu);
         String ms = input.nextLine();
         int choice = Integer.parseInt(ms);
         switch (choice) {
             case 1:
-                OpretOrdre ordre = new OpretOrdre();
+                OrdreController ordre = new OrdreController();
                 ordre.LavOrdre();
                 break;
             case 2:
@@ -55,10 +57,8 @@ public class Main {
                 aktiveOrdrer.BeregnOmsaatning();
                 break;
             case 7:
+                exportdata.ExportToFile("Data/ordre.csv",aktiveOrdrer.faaAlleOrdre(),MenuKort.pizzas);
                 break;
-            case 8:
-                break;
-
             default:
                 ShowMenu();
                 System.out.println("Fejl i input");

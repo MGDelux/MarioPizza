@@ -14,8 +14,14 @@ public class MenuKort {
         pizzas = new ArrayList<Pizza>();
         tempPizzas = getPizzas.ImportMenu(filepath);
         AddPizzaToArray(tempPizzas);
-        System.out.println(pizzas);
+        PrintAllePizzaer();
         new Main().ShowMenu();
+    }
+
+    private void PrintAllePizzaer() {
+        for(Pizza pizza:tempPizzas){
+            System.out.println(pizza);
+        }
     }
 
     private void AddPizzaToArray(ArrayList<Pizza> temp) {
@@ -28,7 +34,5 @@ public class MenuKort {
       Pizza thePizza = pizzas.get(pizzanr-1);
         System.out.println(thePizza);
         return thePizza;
-
-
     }
 }
