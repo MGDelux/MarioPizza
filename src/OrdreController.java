@@ -1,6 +1,7 @@
 import model.Ordre;
 import model.Pizza;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,15 +15,14 @@ public class OrdreController {
     Main main = new Main();
 
     public void LavOrdre() {
-        ShowPizza();
-        OpretKunde();
-        System.out.println("Hvor mange pizzaer er der i denne ordre?");
-        String input = userInput.nextLine();
-        System.out.println(input + " Antal Pizzaer");
-        System.out.println("Pizzza NR:");
-        String tempPizza = userInput.nextLine();
-        OpretOrdre(tempPizza);
-
+            menukort.PrintAllePizzaer();
+            OpretKunde();
+            System.out.println("Hvor mange pizzaer er der i denne ordre?");
+            String input = userInput.nextLine();
+            System.out.println(input + " Antal Pizzaer");
+            System.out.println("Pizzza NR:");
+            String tempPizza = userInput.nextLine();
+            OpretOrdre(tempPizza);
 
     }
 

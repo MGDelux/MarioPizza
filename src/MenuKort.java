@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class MenuKort {
    public static ArrayList<Pizza> pizzas;
-    ArrayList<Pizza> tempPizzas = new ArrayList<Pizza>();
+   static ArrayList<Pizza> tempPizzas = new ArrayList<Pizza>();
 
     public void GetPizzas() throws FileNotFoundException {
         String filepath = "Data/Pizzas.csv";
@@ -18,7 +18,7 @@ public class MenuKort {
         new Main().ShowMenu();
     }
 
-    private void PrintAllePizzaer() {
+    public void PrintAllePizzaer() {
         for(Pizza pizza:tempPizzas){
             System.out.println(pizza);
         }
