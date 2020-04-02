@@ -1,39 +1,40 @@
-import model.Ordre;
-
+package model;
+import View.Main;
 import java.util.ArrayList;
 
 public class OrdreBook {
+    Main main = new Main();
     static ArrayList<Ordre> aktiveOrdrer = new ArrayList<Ordre>();
 
     public void tilFoejAktivOrdre(Ordre ordre) { //#PIZZAPARK FTW
         aktiveOrdrer.add(ordre); //tilføj ordre
     }
 
-     void VisOrdre(){
+     public void VisOrdre(){
          System.out.println("Aktive Ordre: ");
          for (Ordre odre: aktiveOrdrer)
              if (odre.isOrdreStatus() == false){
                  System.out.println(odre);
              }
-         new Main().ShowMenu();
+         main.ShowMenu();
     }
-    void VisAlleOrdre(){
+    public void VisAlleOrdre(){
         System.out.println("Alle ordre:");
         for (Ordre odre: aktiveOrdrer)
                 System.out.println("Odre : "+odre);
 
         new Main().ShowMenu();
     }
-    void SletOrdre(int uID){
+    public void SletOrdre(int uID){
         for(Ordre ordre: aktiveOrdrer)
         if(uID == ordre.getOrdreUID()){
             aktiveOrdrer.remove(ordre);
-            new Main().ShowMenu();
+
 
         }
 
     }
-    void aandreordre(int uID) { //ændreOrdre
+    public void aandreordre(int uID) { //ændreOrdre
         for (Ordre ordre : aktiveOrdrer)
             if (uID == ordre.getOrdreUID()) {
                 ordre.setOrdreStatus(true);
@@ -44,7 +45,7 @@ public class OrdreBook {
                 System.out.println("Denne ordre kan ikke findes.");
             }
     }
-    void BeregnOmsaatning(){
+    public void BeregnOmsaatning(){
         double totalPris = 0;
         for (Ordre ordre : aktiveOrdrer){
            double pris = ordre.getTotalOrderPris();

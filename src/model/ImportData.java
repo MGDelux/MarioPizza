@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class ImportData {
     public ArrayList<Pizza> ImportMenu(String filepath) throws FileNotFoundException {
-        ArrayList<Pizza> pizzas = new ArrayList<Pizza>(); //"TEMP Pizza Array som vi bruger til at sende tilbage til MenuKort
+        ArrayList<Pizza> pizzas = new ArrayList<Pizza>();
         File fp = new File(filepath);
         String line = "";
         if (fp.exists()) {
