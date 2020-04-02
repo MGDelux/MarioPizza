@@ -33,7 +33,7 @@ public class Main {
     }
 
     public void ShowMenu() {
-        String menu = "\nMario's Pizzaria \n -Menu: \n Tryk: [1] For at Lave en ordre. \n Tryk: [2] For at vise en Liste over aktive Ordre. \n Tryk: [3] For at ændre en ordre. \n Tryk: [4] For at slette en ordre.\n Tryk: [5] For at vise alle ordrer. \n Tryk: [6] For at vise omsætning.\n Tryk: [7] for at gemme alle ordrer.";
+        String menu = "\nMario's Pizzaria \n -Menu: \n Tryk: [1] For at Lave en ordre. \n Tryk: [2] For at vise en Liste over aktive Ordre. \n Tryk: [3] For at ændre en ordre til 'færdig'. \n Tryk: [4] For at slette en ordre.\n Tryk: [5] For at vise alle ordrer. \n Tryk: [6] For at vise omsætning.\n Tryk: [7] for at gemme alle ordrer.";
         System.out.println(menu);
         String ms = input.nextLine();
         int choice = Integer.parseInt(ms);
@@ -45,6 +45,7 @@ public class Main {
             case 2:
                 aktiveOrdrer.VisOrdre();
                 break;
+
             case 3:
                 System.out.println("Hvilken ordre skal ændres?");
                 ms = input.nextLine();
