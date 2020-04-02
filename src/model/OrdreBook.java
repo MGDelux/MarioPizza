@@ -3,7 +3,6 @@ import View.Main;
 import java.util.ArrayList;
 
 public class OrdreBook {
-    Main main = new Main();
     static ArrayList<Ordre> aktiveOrdrer = new ArrayList<Ordre>();
 
     public void tilFoejAktivOrdre(Ordre ordre) { //#PIZZAPARK FTW
@@ -16,7 +15,7 @@ public class OrdreBook {
              if (odre.isOrdreStatus() == false){
                  System.out.println(odre);
              }
-         main.ShowMenu();
+         new Main().ShowMenu();
     }
     public void VisAlleOrdre(){
         System.out.println("Alle ordre:");
